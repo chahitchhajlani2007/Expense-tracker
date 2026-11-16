@@ -1,0 +1,328 @@
+* {
+  box-sizing: border-box;
+}
+
+/* ----- Page layout: sidebar on the left, content on the right ----- */
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 290px 1fr;
+  font-family: system-ui, sans-serif;
+  line-height: 1.5;
+  background: #DAF1DE;
+  color: #051F20;
+}
+
+.sidebar {
+  position: sticky;      /* stays in place while the page scrolls */
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+  padding: 36px 28px;
+  background: #163832;
+  color: #DAF1DE;
+}
+
+main {
+  width: 100%;
+  max-width: 960px;
+  min-width: 0;
+  margin: 0 auto;
+  padding: 36px 32px 60px;
+}
+
+/* ----- Sidebar ----- */
+.sidebar h1 {
+  font-family: Georgia, serif;
+  font-weight: normal;
+  font-size: 1.9rem;
+  line-height: 1.2;
+  margin: 0 0 18px;
+}
+
+.sidebar p {
+  margin: 0;
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #8EB69B;
+}
+
+#total {
+  font-family: Georgia, serif;
+  font-size: 2.8rem;
+  letter-spacing: 0;
+  text-transform: none;
+  line-height: 1.2;
+  color: #DAF1DE;
+  margin: 2px 0 32px;
+}
+
+.sidebar h2 {
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #8EB69B;
+  margin: 0 0 6px;
+}
+
+#category-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#category-list li {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid #235347;
+}
+
+#category-list li span:last-child {
+  font-family: Georgia, serif;
+}
+
+/* ----- Main content ----- */
+main h2 {
+  font-family: Georgia, serif;
+  font-weight: normal;
+  font-size: 1.5rem;
+  margin: 0 0 14px;
+  padding-left: 12px;
+  border-left: 4px solid #8EB69B;
+}
+
+/* the form is a soft card */
+form {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 14px 18px;
+  padding: 22px;
+  margin-bottom: 40px;
+  background: rgba(255, 255, 255, 0.45);
+  border: 1px solid #8EB69B;
+  border-radius: 12px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+label {
+  font-size: 0.85rem;
+  color: #235347;
+}
+
+input, select {
+  width: 100%;
+  font: inherit;
+  color: inherit;
+  background: #DAF1DE;
+  border: 1px solid #8EB69B;
+  border-radius: 8px;
+  padding: 10px 12px;
+}
+
+input:focus, select:focus {
+  outline: 2px solid #235347;
+  outline-offset: 1px;
+}
+
+.error {
+  margin: 0;
+  min-height: 1.2em;
+  font-size: 0.85rem;
+  color: #A4262C;
+}
+
+.buttons {
+  grid-column: 1 / -1;
+  display: flex;
+  gap: 10px;
+}
+
+/* ----- Buttons ----- */
+button {
+  font: inherit;
+  color: inherit;
+  background: transparent;
+  border: 1px solid currentColor;
+  border-radius: 8px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+
+button:hover {
+  background: rgba(142, 182, 155, 0.3);
+}
+
+#save-button {
+  background: #235347;
+  border-color: #235347;
+  color: #DAF1DE;
+}
+
+#save-button:hover {
+  background: #163832;
+}
+
+#theme-button {
+  margin-bottom: 32px;
+  border-radius: 999px;
+  padding: 7px 18px;
+  font-size: 0.9rem;
+}
+
+/* ----- Filters ----- */
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.filters .field {
+  flex: 1 1 150px;
+}
+
+/* ----- Table ----- */
+.table-wrap {
+  overflow-x: auto;
+  background: rgba(255, 255, 255, 0.45);
+  border: 1px solid #8EB69B;
+  border-radius: 12px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-variant-numeric: tabular-nums;
+}
+
+th {
+  text-align: left;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: #8EB69B;
+  padding: 12px 14px;
+}
+
+td {
+  padding: 12px 14px;
+  border-bottom: 1px solid rgba(35, 83, 71, 0.2);
+  overflow-wrap: anywhere;
+}
+
+tbody tr:hover {
+  background: rgba(142, 182, 155, 0.25);
+}
+
+tbody tr:last-child td {
+  border-bottom: none;
+}
+
+th:nth-child(4), td:nth-child(4) {
+  text-align: right;
+  font-weight: 600;
+}
+
+td:last-child {
+  white-space: nowrap;
+}
+
+td button {
+  padding: 4px 12px;
+  font-size: 0.85rem;
+}
+
+.delete {
+  color: #A4262C;
+}
+
+#empty-message {
+  padding: 28px 0;
+  text-align: center;
+  color: #235347;
+}
+
+/* ----- Dark mode: only the things that change ----- */
+body.dark {
+  background: #051F20;
+  color: #DAF1DE;
+  color-scheme: dark;
+}
+
+body.dark .sidebar {
+  background: #0B2B26;
+}
+
+body.dark #category-list li {
+  border-color: #163832;
+}
+
+body.dark label, body.dark #empty-message {
+  color: #8EB69B;
+}
+
+body.dark form, body.dark .table-wrap {
+  background: #0B2B26;
+  border-color: #235347;
+}
+
+body.dark input, body.dark select {
+  background: #051F20;
+  border-color: #235347;
+}
+
+body.dark input:focus, body.dark select:focus {
+  outline-color: #8EB69B;
+}
+
+body.dark #save-button {
+  background: #8EB69B;
+  border-color: #8EB69B;
+  color: #051F20;
+}
+
+body.dark #save-button:hover {
+  background: #DAF1DE;
+}
+
+body.dark th {
+  background: #163832;
+  color: #8EB69B;
+}
+
+body.dark td {
+  border-color: #163832;
+}
+
+body.dark tbody tr:hover {
+  background: #163832;
+}
+
+body.dark .error, body.dark .delete {
+  color: #F4A6A0;
+}
+
+/* ----- Small screens: sidebar goes on top ----- */
+@media (max-width: 800px) {
+  body {
+    grid-template-columns: 1fr;
+  }
+  .sidebar {
+    position: static;
+    height: auto;
+    padding: 24px 20px;
+  }
+  main {
+    padding: 24px 16px 40px;
+  }
+}
