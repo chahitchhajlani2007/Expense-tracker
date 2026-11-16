@@ -13,7 +13,7 @@ A small expense tracker for my college project, built with plain HTML, CSS and J
 
 ## How to run
 
-Open `index.html` in a browser. There is nothing to install.
+Live Vercel link - https://expense-tracker-five-mu-60.vercel.app
 
 ## Files
 
