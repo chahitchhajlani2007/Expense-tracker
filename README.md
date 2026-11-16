@@ -20,9 +20,3 @@ Open `index.html` in a browser. There is nothing to install.
 - `index.html` - the page
 - `style.css` - the styling
 - `script.js` - all the logic
-
-## Notes
-
-- The totals change when you use the filters.
-- Firefox on desktop has no month picker, so type the month like `2026-10`.
-- Data is stored in your browser only. Clearing site data deletes it.
